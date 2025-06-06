@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Webプロ06 - HTML/CSS</title>
+  <style>
+    /* 既存のスタイルは今回のレイアウトに合わせて調整・削除しました */
+
+    /* 基本的なページ設定 */
+    body {
+      margin: 0;
+      background-color: #f0f2f5; /* 背景色を追加して見やすくします */
+      font-family: sans-serif;  /* フォントを指定 */
+      /* プロフィールカードを画面中央に配置 */
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    /* プロフィールカード全体のコンテナ */
+    .profile-card {
+      display: grid;
+      /* グリッドレイアウトのエリアを定義 */
+      grid-template-areas:
+        "icon info"
+        "bio  bio";
+      grid-template-columns: 120px 1fr; /* 左列(アイコン)を120px、右列を残り全部に */
+      grid-template-rows: auto auto;    /* 行の高さはコンテンツに応じて自動調整 */
+      gap: 16px 24px; /* 行間(16px)と列間(24px)の余白 */
+      width: 420px;
+      padding: 24px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* アイコンエリア */
+    .icon-area {
+      grid-area: icon; /* grid-template-areasで定義した"icon"エリアに配置 */
+      display: grid;
+      place-items: center;
+    }
+
+    /* プロフィールアイコン画像 */
+    .profile-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; /* 正円にするための指定 */
+      object-fit: cover;  /* 画像のアスペクト比を保ったまま円にフィットさせる */
+    }
+
+    /* 名前・所属エリア */
+    .info-area {
+      grid-area: info; /* "info"エリアに配置 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* 名前 (既存のh1を流用) */
+    .info-area h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      margin: 0;
+    }
+
+    /* 所属 (pタグを追加) */
+    .info-area .affiliation {
+      font-size: 16px;
+      color: #666;
+      margin: 4px 0 0 0;
+    }
+
+    /* 自己紹介エリア (既存のdiv.contentを流用) */
+    .bio-area {
+      grid-area: bio; /* "bio"エリアに配置 */
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="icon-area">
+      <img src="https://prog-8.com/images/sass/wanko.svg" alt="プロフィールアイコン" class="profile-icon">
+    </div>
+
+    <div class="info-area">
+      <h1>ワンコ</h1>
+      <p class="affiliation">Progate大学 コーギー学部</p>
+    </div>
+
+    <p class="bio-area">
+      こんにちは！HTMLとCSSを勉強中の犬です。好きな食べ物は骨です。よろしくお願いします。
+    </p>
+  </div>
+
+  </body>
+</html>
