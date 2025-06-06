@@ -3,138 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fofo Bakery - Modern & Stylish Artisan Bakery</title>
-    <meta name="description" content="Fofo Bakery is a modern and stylish artisan bakery specializing in high-quality ingredients. We deliver freshly baked bread and special moments.">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Our Baker - Fofo Bakery</title>
+    <meta name="description" content="Meet Four, the head baker and founder of Fofo Bakery. Discover the passion behind our bread.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> </head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <header class="header">
         <div class="container">
             <a href="#" class="logo">Fofo Bakery</a>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#location">Location</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
-    <nav class="mobile-nav" id="mobile-nav">
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#location">Location</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-image">
-                <div class="hero-text">
-                    <h1>Artisan Bread, Modern Style.</h1>
-                    <p>The scent of fresh bread for your daily life.</p>
-                </div>
+    <main class="main-content">
+        <div class="container content-wrapper fade-in">
+            <div class="image-column">
+                <img src="fofo.jpg" alt="A portrait of Four, the head baker of Fofo Bakery">
             </div>
-        </section>
-
-        <section id="about" class="section fade-in">
-            <div class="container">
-                <h2 class="section-title">About Us</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1549932822-6c3739520313?q=80&w=1974&auto=format&fit=crop" alt="Baker's hands kneading dough">
-                    </div>
-                    <div class="about-text">
-                        <h3>The Fofo Bakery Philosophy</h3>
-                        <p>Fofo Bakery is an artisan bakery that blends traditional methods with a modern sensibility. We use carefully selected domestic flour and natural yeast, baking each item with care and precision.</p>
-                        <p>In our minimalist and refined space, you can enjoy the sounds and aromas of baking with all your senses. Take a short break from your busy life and spend a special moment at Fofo Bakery.</p>
-                    </div>
-                </div>
+            <div class="text-column">
+                <h1 class="baker-name">Four</h1>
+                <p class="baker-title">Head Baker & Founder</p>
+                <p class="baker-bio">
+                    For Four, baking isn't just a process; it's a conversation between the hands and the dough. Raised in a family that cherished the simple joy of a shared meal, he discovered his passion early on, mesmerized by the magic of turning flour, water, and salt into something warm and life-giving.
+                </p>
+                <p class="baker-bio">
+                    After honing his skills in classic European bakeries, Four founded Fofo Bakery with a clear vision: to create bread that is both honest and elegant. He believes in using the highest quality ingredients, patient fermentation, and a deep respect for tradition, while always exploring modern techniques to create the perfect loaf.
+                </p>
             </div>
-        </section>
-
-        <section id="menu" class="section fade-in">
-            <div class="container">
-                <h2 class="section-title">Our Menu</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1584323635919-291a2e858739?q=80&w=1968&auto=format&fit=crop" alt="Croissant">
-                        <h4>Croissant</h4>
-                        <p>Made with premium French butter for a rich aroma and a perfectly flaky texture.</p>
-                    </div>
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1974&auto=format&fit=crop" alt="Pain de Campagne">
-                        <h4>Pain de Campagne</h4>
-                        <p>A rustic country bread slowly fermented with our house-made natural yeast.</p>
-                    </div>
-                    <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1635794928012-7041a546208a?q=80&w=1964&auto=format&fit=crop" alt="Matcha Bread">
-                        <h4>Matcha Swirl Loaf</h4>
-                        <p>A soft, fluffy loaf with a beautiful swirl of fragrant Uji matcha from Kyoto.</p>
-                    </div>
-                     <div class="menu-item">
-                        <img src="https://images.unsplash.com/photo-1621262410357-41b2e546152a?q=80&w=1974&auto=format&fit=crop" alt="Japanese Salted Butter Roll">
-                        <h4>Salted Butter Roll</h4>
-                        <p>A popular Japanese bread with a crispy, salty crust and a soft, buttery center.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="location" class="section fade-in">
-            <div class="container">
-                <h2 class="section-title">Location & Hours</h2>
-                <div class="location-content">
-                    <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102928.1062066603!2d139.4633758327421!3d35.99120689255862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d911b68a68d7%3A0x133863e4f326581!2z5ZCI5YuV55yM5qGI5bed5biC!5e0!3m2!1sja!2sjp!4v1717739818318!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="location-info">
-                        <h3>Fofo Bakery</h3>
-                        <p>
-                            2-9-36 Nishi, Okegawa-shi<br>
-                            Saitama, 363-0017<br>
-                            (This is a fictional address)
-                        </p>
-                        <h3>Opening Hours</h3>
-                        <p>
-                            Tue - Fri: 9:00 AM - 6:00 PM<br>
-                            Sat - Sun: 8:00 AM - 5:00 PM<br>
-                            Closed: Mondays
-                        </p>
-                        <h3>Access</h3>
-                        <p>A 10-minute walk from the West Exit of Okegawa Station (JR Takasaki Line).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <footer id="contact" class="footer">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                 <a href="#" class="logo">Fofo Bakery</a>
-                 <p>For reservations and inquiries, please contact us by phone.</p>
-                 <p class="tel">TEL: 048-XXX-XXXX</p>
-                 <div class="social-links">
-                    </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2024 Fofo Bakery. All Rights Reserved.</p>
-            </div>
+            <p>&copy; 2025 Fofo Bakery. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
