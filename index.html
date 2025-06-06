@@ -1,195 +1,33 @@
-&lt;!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สู้ๆนะ</title>
+    <style>
+        /* ページの基本スタイル */
+        body {
+            /* 文字を画面の上下左右の真ん中に配置するための設定 */
+            display: grid;
+            place-items: center;
+            height: 100vh; /* 画面の高さを100%にする */
+            margin: 0; /* bodyが持つデフォルトの余白をなくす */
 
-&lt;html lang="ja">
-&lt;head>
-&lt;meta charset="UTF-8">
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
-&lt;title>Fofo 応援ページ&lt;/title>
-&lt;style>
-/* モダンなスタイル */
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-margin: 0;
-background-color: #f4f4f4;
-color: #333;
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 20px;
-}
-
-    header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-        color: #007bff;
-        margin-bottom: 10px;
-    }
-
-    .hero {
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        margin-bottom: 30px;
-        max-width: 600px;
-        width: 100%;
-    }
-
-    .support-message {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-
-    .support-actions {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-    .support-button {
-        background-color: #28a745;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1em;
-        transition: background-color 0.3s ease;
-    }
-
-    .support-button:hover {
-        background-color: #218838;
-    }
-
-    .counter-area {
-        background-color: #e9ecef;
-        padding: 15px 20px;
-        border-radius: 5px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .counter-area p {
-        font-size: 1.1em;
-        margin: 0;
-    }
-
-    .additional-info {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .additional-info h2 {
-        color: #007bff;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-
-    footer {
-        text-align: center;
-        color: #777;
-        margin-top: 20px;
-    }
-
-    /* レスポンシブデザイン */
-    @media (max-width: 768px) {
-        .support-actions {
-            flex-direction: column;
-            align-items: center;
+            /* 見た目の調整 */
+            font-family: sans-serif;
+            background-color: #f0f2f5; /* 背景色を少しグレーに */
         }
-
-        .hero, .additional-info {
-            padding: 30px;
+        
+        /* テキストのスタイル */
+        h1 {
+            font-size: 5rem; /* 文字をとても大きくする */
+            color: #333; /* 文字色を濃いグレーに */
         }
+    </style>
+</head>
+<body>
 
-        header h1 {
-            font-size: 2em;
-        }
+    <h1>สู้ๆนะ</h1>
 
-        .support-message {
-            font-size: 1em;
-        }
-    }
-</style>
-&lt;/head>
-&lt;body>
-&lt;header>
-&lt;h1>📣 Fofo 応援ページ 📣&lt;/h1>
-&lt;p>みんなで Fofo を応援しよう！&lt;/p>
-&lt;/header>
-
-<section class="hero">
-    <p class="support-message">Fofo さん、いつも素晴らしい活動ありがとうございます！ 私たちはあなたのことを心から応援しています！</p>
-    <p class="thai-cheer">🇹🇭 สู้ๆ นะ! (susu na!) 💪</p>
-</section>
-
-<section class="support-actions">
-    <button id="support-button" class="support-button">応援する！</button>
-    <button id="cheer-button" class="support-button">エールを送る！</button>
-</section>
-
-<section class="counter-area">
-    <p>現在の応援数: <span id="support-count">0</span> 件</p>
-</section>
-
-<section class="additional-info">
-    <h2>Fofo さんの魅力</h2>
-    <p>（ここに Fofo さんの活動内容や魅力などを記述できます。）</p>
-    <h2>応援メッセージ</h2>
-    <div id="message-area">
-        <p>まだ応援メッセージはありません。</p>
-    </div>
-    <button id="show-messages" class="support-button">過去の応援メッセージを見る</button>
-</section>
-
-<footer>
-    <p>&copy; 2024 Fofo 応援プロジェクト</p>
-</footer>
-
-<script>
-    let supportCount = 0;
-    const supportCountElement = document.getElementById('support-count');
-    const supportButton = document.getElementById('support-button');
-    const cheerButton = document.getElementById('cheer-button');
-    const messageArea = document.getElementById('message-area');
-    const showMessagesButton = document.getElementById('show-messages');
-
-    supportButton.addEventListener('click', () => {
-        supportCount++;
-        supportCountElement.textContent = supportCount;
-        // ここでサーバーに応援データを送信するなどの処理を追加できます
-        alert('応援ありがとうございます！現在の応援数: ' + supportCount);
-    });
-
-    cheerButton.addEventListener('click', () => {
-        const message = prompt('Fofo さんへの応援メッセージを入力してください:');
-        if (message && message.trim() !== '') {
-            const newMessage = document.createElement('p');
-            newMessage.textContent = message;
-            messageArea.appendChild(newMessage);
-            if (messageArea.querySelector('p:first-child') === newMessage) {
-                messageArea.removeChild(messageArea.querySelector('p:first-child'));
-            }
-            // ここでサーバーにメッセージを送信するなどの処理を追加できます
-        }
-    });
-
-    showMessagesButton.addEventListener('click', () => {
-        alert('過去の応援メッセージは現在準備中です！');
-        // ここで過去のメッセージを表示する処理を実装できます
-    });
-</script>
-&lt;/body>
-&lt;/html>
+</body>
+</html>
