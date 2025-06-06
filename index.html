@@ -1,101 +1,195 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <title>Webプロ06 - HTML/CSS</title>
-  <style>
-    /* 既存のスタイルは今回のレイアウトに合わせて調整・削除しました */
+&lt;!DOCTYPE html>
 
-    /* 基本的なページ設定 */
-    body {
-      margin: 0;
-      background-color: #f0f2f5; /* 背景色を追加して見やすくします */
-      font-family: sans-serif;  /* フォントを指定 */
-      /* プロフィールカードを画面中央に配置 */
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
+&lt;html lang="ja">
+&lt;head>
+&lt;meta charset="UTF-8">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+&lt;title>Fofo 応援ページ&lt;/title>
+&lt;style>
+/* モダンなスタイル */
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+margin: 0;
+background-color: #f4f4f4;
+color: #333;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+}
+
+    header {
+        text-align: center;
+        margin-bottom: 30px;
     }
 
-    /* プロフィールカード全体のコンテナ */
-    .profile-card {
-      display: grid;
-      /* グリッドレイアウトのエリアを定義 */
-      grid-template-areas:
-        "icon info"
-        "bio  bio";
-      grid-template-columns: 120px 1fr; /* 左列(アイコン)を120px、右列を残り全部に */
-      grid-template-rows: auto auto;    /* 行の高さはコンテンツに応じて自動調整 */
-      gap: 16px 24px; /* 行間(16px)と列間(24px)の余白 */
-      width: 420px;
-      padding: 24px;
-      background-color: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    header h1 {
+        font-size: 2.5em;
+        color: #007bff;
+        margin-bottom: 10px;
     }
 
-    /* アイコンエリア */
-    .icon-area {
-      grid-area: icon; /* grid-template-areasで定義した"icon"エリアに配置 */
-      display: grid;
-      place-items: center;
+    .hero {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 30px;
+        max-width: 600px;
+        width: 100%;
     }
 
-    /* プロフィールアイコン画像 */
-    .profile-icon {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%; /* 正円にするための指定 */
-      object-fit: cover;  /* 画像のアスペクト比を保ったまま円にフィットさせる */
+    .support-message {
+        font-size: 1.2em;
+        margin-bottom: 20px;
     }
 
-    /* 名前・所属エリア */
-    .info-area {
-      grid-area: info; /* "info"エリアに配置 */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .support-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 30px;
     }
 
-    /* 名前 (既存のh1を流用) */
-    .info-area h1 {
-      font-size: 24px;
-      font-weight: 700;
-      color: #333;
-      margin: 0;
+    .support-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
     }
 
-    /* 所属 (pタグを追加) */
-    .info-area .affiliation {
-      font-size: 16px;
-      color: #666;
-      margin: 4px 0 0 0;
+    .support-button:hover {
+        background-color: #218838;
     }
 
-    /* 自己紹介エリア (既存のdiv.contentを流用) */
-    .bio-area {
-      grid-area: bio; /* "bio"エリアに配置 */
-      color: #333333;
-      font-size: 16px;
-      line-height: 1.6;
+    .counter-area {
+        background-color: #e9ecef;
+        padding: 15px 20px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        text-align: center;
     }
-  </style>
-</head>
-<body>
-  <div class="profile-card">
-    <div class="icon-area">
-      <img src="https://prog-8.com/images/sass/wanko.svg" alt="プロフィールアイコン" class="profile-icon">
+
+    .counter-area p {
+        font-size: 1.1em;
+        margin: 0;
+    }
+
+    .additional-info {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .additional-info h2 {
+        color: #007bff;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    footer {
+        text-align: center;
+        color: #777;
+        margin-top: 20px;
+    }
+
+    /* レスポンシブデザイン */
+    @media (max-width: 768px) {
+        .support-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero, .additional-info {
+            padding: 30px;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        .support-message {
+            font-size: 1em;
+        }
+    }
+</style>
+&lt;/head>
+&lt;body>
+&lt;header>
+&lt;h1>📣 Fofo 応援ページ 📣&lt;/h1>
+&lt;p>みんなで Fofo を応援しよう！&lt;/p>
+&lt;/header>
+
+<section class="hero">
+    <p class="support-message">Fofo さん、いつも素晴らしい活動ありがとうございます！ 私たちはあなたのことを心から応援しています！</p>
+    <p class="thai-cheer">🇹🇭 สู้ๆ นะ! (susu na!) 💪</p>
+</section>
+
+<section class="support-actions">
+    <button id="support-button" class="support-button">応援する！</button>
+    <button id="cheer-button" class="support-button">エールを送る！</button>
+</section>
+
+<section class="counter-area">
+    <p>現在の応援数: <span id="support-count">0</span> 件</p>
+</section>
+
+<section class="additional-info">
+    <h2>Fofo さんの魅力</h2>
+    <p>（ここに Fofo さんの活動内容や魅力などを記述できます。）</p>
+    <h2>応援メッセージ</h2>
+    <div id="message-area">
+        <p>まだ応援メッセージはありません。</p>
     </div>
+    <button id="show-messages" class="support-button">過去の応援メッセージを見る</button>
+</section>
 
-    <div class="info-area">
-      <h1>ワンコ</h1>
-      <p class="affiliation">Progate大学 コーギー学部</p>
-    </div>
+<footer>
+    <p>&copy; 2024 Fofo 応援プロジェクト</p>
+</footer>
 
-    <p class="bio-area">
-      こんにちは！HTMLとCSSを勉強中の犬です。好きな食べ物は骨です。よろしくお願いします。
-    </p>
-  </div>
+<script>
+    let supportCount = 0;
+    const supportCountElement = document.getElementById('support-count');
+    const supportButton = document.getElementById('support-button');
+    const cheerButton = document.getElementById('cheer-button');
+    const messageArea = document.getElementById('message-area');
+    const showMessagesButton = document.getElementById('show-messages');
 
-  </body>
-</html>
+    supportButton.addEventListener('click', () => {
+        supportCount++;
+        supportCountElement.textContent = supportCount;
+        // ここでサーバーに応援データを送信するなどの処理を追加できます
+        alert('応援ありがとうございます！現在の応援数: ' + supportCount);
+    });
+
+    cheerButton.addEventListener('click', () => {
+        const message = prompt('Fofo さんへの応援メッセージを入力してください:');
+        if (message && message.trim() !== '') {
+            const newMessage = document.createElement('p');
+            newMessage.textContent = message;
+            messageArea.appendChild(newMessage);
+            if (messageArea.querySelector('p:first-child') === newMessage) {
+                messageArea.removeChild(messageArea.querySelector('p:first-child'));
+            }
+            // ここでサーバーにメッセージを送信するなどの処理を追加できます
+        }
+    });
+
+    showMessagesButton.addEventListener('click', () => {
+        alert('過去の応援メッセージは現在準備中です！');
+        // ここで過去のメッセージを表示する処理を実装できます
+    });
+</script>
+&lt;/body>
+&lt;/html>
