@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Baker - Fofo Bakery</title>
-    <meta name="description" content="Meet Four, the head baker and founder of Fofo Bakery. Discover the passion behind our bread.">
+    <title>メッセージ</title>
+    <style>
+        /* --- ここからCSS --- */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+        body {
+            margin: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f2f5; /* 背景色を少しグレーに */
+            color: #333; /* 基本の文字色 */
+            display: grid; /* 要素を中央に配置するための設定 */
+            place-items: center; /* 要素を中央に配置するための設定 */
+            height: 100vh; /* 画面全体の高さを使用 */
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .container {
+            text-align: center;
+            background-color: #ffffff; /* メッセージ部分の背景は白 */
+            padding: 40px 60px; /* 内側の余白 */
+            border-radius: 12px; /* 角を丸くする */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+        }
+
+        h1 {
+            margin: 0 0 10px 0; /* 見出しの下に少し余白 */
+            font-size: 24px;
+            font-weight: 700; /* 少し太めのフォント */
+        }
+
+        p {
+            margin: 0;
+            font-size: 16px;
+        }
+        /* --- ここまでCSS --- */
+    </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <a href="#" class="logo">Fofo Bakery</a>
+    <div class="container">
+        <h1>こんにちは！</h1>
+        <p>ここにメッセージが表示されます。</p>
         </div>
-    </header>
 
-    <main class="main-content">
-        <div class="container content-wrapper fade-in">
-            <div class="image-column">
-                <img src="fofo.jpg" alt="A portrait of Four, the head baker of Fofo Bakery">
-            </div>
-            <div class="text-column">
-                <h1 class="baker-name">Four</h1>
-                <p class="baker-title">Head Baker & Founder</p>
-                <p class="baker-bio">
-                    For Four, baking isn't just a process; it's a conversation between the hands and the dough. Raised in a family that cherished the simple joy of a shared meal, he discovered his passion early on, mesmerized by the magic of turning flour, water, and salt into something warm and life-giving.
-                </p>
-                <p class="baker-bio">
-                    After honing his skills in classic European bakeries, Four founded Fofo Bakery with a clear vision: to create bread that is both honest and elegant. He believes in using the highest quality ingredients, patient fermentation, and a deep respect for tradition, while always exploring modern techniques to create the perfect loaf.
-                </p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Fofo Bakery. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
